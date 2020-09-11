@@ -1,0 +1,270 @@
+.card {
+
+    //FUNCIONALITY
+    perspective: 150rem;
+    -moz-perspective: 150rem;
+    position: relative;
+    height: 52rem;    
+    
+    &__side {
+        height: 52rem;
+        transition: all .8s ease;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        backface-visibility: hidden;
+        border-radius: $border-corners;
+        overflow: hidden;        
+        box-shadow: 0 1.5rem 4rem rgba($color-black, .15);
+
+        &--front {
+            background-color: $color-white;
+        }
+
+        &--back {
+            transform: rotateY(180deg);            
+        }
+    }
+    
+    //.card:hover .card__side--front { 
+    &:hover &__side--front {
+        transform: rotateY(-180deg);
+    }
+
+    &:hover &__side--back {
+        transform: rotateY(0deg);
+    }
+
+    // FRONT SIDE STYLING
+    &__picture-front {
+        background-size: cover;
+        height: 23rem;        
+        background-blend-mode: color;        
+        -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+        clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+        border-top-left-radius: $border-corners;
+        border-top-right-radius: $border-corners;
+
+        &--1 {
+            background-image: linear-gradient(to right bottom, 
+            $color-secondary-light, $color-secondary-dark), 
+            url(../img/Reverseflash-small.jpg);
+
+            @media(min-resolution: 192dpi) and (min-width: 37.5em), 
+                  (min-width: 125em){ //media query image
+                background-image: linear-gradient(to right bottom, 
+                $color-secondary-light, $color-secondary-dark), 
+                url(../img/Reverseflash-large.jpg);
+            }
+        }
+
+        &--2 {
+            background-image: linear-gradient(to right bottom, 
+            $color-tertiary-light, $color-tertiary-dark), 
+            url(../img/zoom-small.jpg);
+
+            @media(min-resolution: 192dpi) and (min-width: 37.5em), 
+                  (min-width: 125em){ //media query image
+                background-image: linear-gradient(to right bottom, 
+                $color-tertiary-light, $color-tertiary-dark), 
+                url(../img/zoom-larger.jpg);
+            }
+        }
+
+        &--3 {
+            background-image: linear-gradient(to right bottom, 
+            $color-primary-light, $color-primary-dark),
+            url(../img/Savitar-small.jpg);
+
+            @media(min-resolution: 192dpi) and (min-width: 37.5em), 
+                  (min-width: 125em){ //media query image
+                background-image: linear-gradient(to right bottom, 
+                $color-primary-light, $color-primary-dark), 
+                url(../img/Savitar-large.jpg);
+            }
+        }
+    }
+
+    &__heading {
+        font-size: 2.5rem;
+        font-weight: 300;
+        text-transform: uppercase;
+        text-align: right;
+        color: $color-white;
+        position: absolute;
+        top: 12rem;
+        right: 2rem;
+        width: 75%;
+    }
+
+    &__heading-span {
+        padding: .7rem 1.5rem;
+        -webkit-box-decoration-break: clone; 
+        box-decoration-break: clone;        
+
+        &--1 {
+            background-image: linear-gradient(to right bottom,
+            rgba($color-secondary-light, .85), 
+            rgba($color-secondary-dark, .85));
+        }
+
+        &--2 {
+            background-image: linear-gradient(to right bottom,
+            rgba($color-tertiary-light, .85), 
+            rgba($color-tertiary-dark, .85));
+        }
+
+        &--3 {
+            background-image: linear-gradient(to right bottom,
+            rgba($color-primary-light, .85), 
+            rgba($color-primary-dark, .85));
+        }
+    }
+
+    &__details {
+        padding: 3rem;
+
+        ul {
+            list-style: none;
+            width: 80%;
+            margin: 0 auto;
+
+            li {
+                text-align: center;
+                font-size: 1.3rem;
+                padding: 1rem;
+
+                &:not(:last-child) {
+                    border-bottom: .1rem solid $color-grey-light-2;
+                }
+
+            }
+        }
+    }
+
+    // BACK SIDE STYLING
+
+    &__picture-back {
+        background-size: cover;
+        height: 23rem;
+        background-blend-mode: color;        
+        -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+        clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+        
+        &--1 {
+            background-image: linear-gradient(to right bottom, 
+            $color-secondary-light, $color-secondary-dark),
+            url(../img/thawne-small.jpg);
+
+            @media(min-resolution: 192dpi) and (min-width: 37.5em), 
+                  (min-width: 125em){ //media query image
+                background-image: linear-gradient(to right bottom, 
+                $color-secondary-light, $color-secondary-dark), 
+                url(../img/thawne-large.jpg);
+            }
+        }
+
+        &--2 {
+            background-image: linear-gradient(to right bottom, 
+            rgba($color-tertiary-light, .2), 
+            rgba($color-tertiary-dark, .2)),
+            url(../img/Hunter-Zolomon-small.jpg);
+
+            @media(min-resolution: 192dpi) and (min-width: 37.5em), 
+                  (min-width: 125em){ //media query image
+                background-image: linear-gradient(to right bottom, 
+                $color-tertiary-light, $color-tertiary-dark), 
+                url(../img/Hunter-Zolomon-large.jpg);
+            }
+        }
+
+        &--3 {
+            background-image: linear-gradient(to right bottom, 
+            rgba($color-primary-light, .4), 
+            rgba($color-primary-dark, .4)),
+            url(../img/Savitar-Barry-small.jpg);
+
+            @media(min-resolution: 192dpi) and (min-width: 37.5em), 
+            (min-width: 125em){ //media query image
+          background-image: linear-gradient(to right bottom, 
+          $color-primary-light, $color-primary-dark), 
+          url(../img/Savitar-Barry-large.jpg);
+      }
+        }
+
+    }
+
+    &__cta {
+        position: absolute;
+        top: 70%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 90%;
+        text-align: center;      
+    }
+
+    &__box {
+        text-align: center;
+        margin-bottom: 8rem;
+    }
+
+    &__name {
+        font-size: 1.8rem;
+        font-weight: 500;            
+        text-transform: uppercase;
+    }
+
+
+
+    //Cards media query 
+
+    //@include respond(tab-port) { //media query
+        //card settings (.card)
+    @media only screen and (max-width: 56.25em),
+           only screen and (hover:none) {
+        height: auto;
+        border-radius: $border-corners;
+        background-color: $color-white;
+        box-shadow: 0 1.5rem 4rem rgba($color-black, .15);
+
+        &__side {
+            height: auto;            
+            position: relative;
+            box-shadow: none;
+            border-radius: 0rem;     
+                        
+            &--back {
+                transform: rotateY(0deg);
+                clip-path: polygon(0 10%, 100% 0, 100% 100%, 0 100%);            
+            }
+        }
+
+        &__details {
+            padding: 0 2rem;
+        }        
+
+        &__picture-back {
+            height: 28rem;
+            clip-path: none;
+        }
+        
+        //.card:hover .card__side--front { 
+        &:hover &__side--front {
+            transform: rotateY(-0deg);
+        }
+       
+        &__cta {
+            position: relative;
+            top: 0%;
+            left: 0%;
+            transform: translate(0);
+            width: 100%;
+            padding: 2rem 2rem 4rem 4rem;               
+        }
+
+        &__box {            
+            margin-bottom: 3rem;
+        }        
+    }
+}

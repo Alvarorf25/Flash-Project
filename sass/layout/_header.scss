@@ -1,0 +1,52 @@
+.header {
+    height: 85vh;
+    background-image: linear-gradient(to right,
+      rgba($color-primary-light, 0.8),
+      rgba($color-primary-dark, 0.8)), 
+    url(../img/flash-header-small.jpg);
+    background-size: cover;
+    background-position: top;    
+    position: relative;
+
+    //Feature query (@support to ask if browser support clip-path
+    @supports (clip-path: polygon(0 0) or (-webkit-clip-path: polygon(0 0))) {
+        -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+        clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+        height: 95vh;
+    }
+    
+    
+    
+    //RESPONSIVE IMAGE media query
+    @media only screen and (min-resolution: 192dpi) and (min-width: 37.5em),
+           only screen and (-webkit-min-device-pixel: 2) and (min-width: 37.5em),
+           only screen and (min-width: 125em){ //if resolution >= 192dpi and width >= 600px  or if width >= 2000px please load the flash-header image
+        background-image: linear-gradient(to right,
+            rgba($color-secondary-light, 0.8),
+            rgba($color-secondary-dark, 0.8)), 
+        url(../img/flash-header.jpg);
+        //600px/16px=37.5em  2000px/16px= 125em
+    }        
+
+    @include respond(phone) { //media query
+        -webkit-clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
+        clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
+    }
+
+    &__logo-box {
+        position: absolute;        
+        top: 4rem;
+        left: 4rem;
+    }
+    
+    &__logo {
+        height: 7rem;        
+    }
+    
+    &__text-box {
+        position: absolute;
+        top: 42%;  
+        left: 52%; 
+        transform: translate(-50%, -50%);     
+    }
+}

@@ -1,0 +1,117 @@
+.section-about {
+  background-color: $color-grey-light-1;
+  padding: 20rem 0 36rem;
+  margin-top: -20vh;
+
+  @include respond(tab-port) { //media query
+    padding: 20rem 0;
+  }
+}
+
+.section-features {
+  padding: 20rem 0;
+  background-image: linear-gradient(
+    to right,
+    rgba($color-primary-light, 0.8),
+    rgba($color-primary-dark, 0.8)), 
+    url(../img/reversflash.jpg);
+  background-size: cover;
+  transform: skewY(-7deg);
+  margin-top: -5.5rem;
+
+  // universal selector [.section-feature > *  (in css)]
+  //Direct child selector: &  -video 38-
+  & > * {
+    transform: skewY(7deg);
+  }
+
+  @include respond(tab-port) { //media query
+    padding: 10rem 0;
+  }
+
+  //RESPONSIVE IMAGE - media query
+  @media(min-resolution: 192dpi) and (min-width: 37.5em), (min-width: 125em) {
+    background-image: linear-gradient(
+    to right,
+    rgba($color-secondary-light, 0.8),
+    rgba($color-secondary-dark, 0.8)), 
+    url(../img/reversflash-large.jpg);
+  }  
+}
+
+.section-tours {
+  background-color: $color-grey-light-1;
+  padding: 25rem 0 15rem 0;
+  margin-top: -5.5rem;
+
+  @include respond(tab-port) { //media query
+    padding: 15rem 0 10rem 0;
+  }
+}
+
+//section-story
+.section-alliances {
+  position: relative;
+  padding: 15rem 0;
+  
+  @include respond(tab-port) { //media query
+    padding: 5rem 0;
+  }
+}
+
+//section-book
+.section-fans {
+  padding: 15rem 0;
+  background-image: linear-gradient(to right bottom, 
+  $color-primary-light, $color-primary-dark);
+
+  @include respond(tab-port) { //media query
+    padding: 10rem 0;
+  }
+}
+
+.book {
+  background-image: linear-gradient(105deg,
+    rgba($color-white, .8) 0%,
+    rgba($color-white, .8) 50%, 
+  transparent 50%), url(../img/Flash-book1.jpg);
+
+  //it could be background-size: cover; too
+  background-size: 100%;
+  border-radius: $border-corners;
+  box-shadow: 0 1.5rem 4rem rgba($color-black, .15);
+
+  @include respond(tab-port) { //media query
+    background-image: linear-gradient(to right,
+    rgba($color-white, .8) 0%,
+    rgba($color-white, .8) 100%), 
+    url(../img/Flash-book1.jpg);
+    background-size: cover;
+    
+    //background-size: cover;
+    width: 130%;
+    transform: translateX(-6.5rem);    
+  }
+
+  @include respond(phone) { //media query
+    width: 100%;
+    transform: none;
+  }
+
+  &__form { //info form
+    width: 53%;
+    padding: 2.7rem;
+
+    @include respond(tab-port) { //media query
+      width: 100%;
+    }
+  }
+
+  @media(min-resolution: 192dpi) and (min-width: 75em), (min-width: 125em) {
+    background-image: linear-gradient(105deg,
+    rgba($color-white, .8) 0%,
+    rgba($color-white, .8) 50%, 
+  transparent 50%), url(../img/Flash-book1-large.jpg);
+  }
+}
+
